@@ -1,0 +1,227 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+:root {
+  --color-black: #050505;
+  --color-charcoal: #121212;
+  --color-graphite: #1f1f1f;
+  --color-white: #ffffff;
+  --color-silver: #a0a0a0;
+  --color-gold: #d4af37; /* Based on the logo */
+  --color-gold-glow: rgba(212, 175, 55, 0.4);
+  
+  --font-primary: 'Outfit', sans-serif;
+  --font-secondary: 'Inter', sans-serif;
+  
+  --transition-smooth: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: all 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-secondary);
+  background-color: var(--color-black);
+  color: var(--color-white);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-primary);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+.canvas-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Glassmorphism utility */
+.glass {
+  background: rgba(18, 18, 18, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.golden-text {
+  background: linear-gradient(135deg, #f9d976 0%, #e9b646 50%, #c4952d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Base padding for sections */
+section {
+  padding: clamp(60px, 10vw, 120px) 5%;
+}
+
+/* Animations & Polishes */
+.btn-primary {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  min-height: 44px; /* Touch target size */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn-primary:hover, .btn-primary:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.4);
+  outline: none;
+}
+
+.btn-secondary {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  min-height: 44px;
+}
+.btn-secondary:hover, .btn-secondary:focus-visible {
+  background: rgba(212, 175, 55, 0.1) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(212, 175, 55, 0.2);
+  outline: none;
+}
+
+.contact-link {
+  color: var(--color-silver);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.contact-link:hover {
+  color: var(--color-gold);
+}
+
+.nav-link-hover:hover {
+  color: var(--color-gold) !important;
+}
+
+.icon-btn {
+  transition: transform 0.3s ease, color 0.3s ease;
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-btn:hover, .icon-btn:focus-visible {
+  transform: scale(1.15);
+  color: var(--color-gold) !important;
+  outline: 2px solid var(--color-gold);
+  border-radius: 4px;
+}
+
+/* Responsive Nav & Mobile Adjustments */
+@media (max-width: 900px) {
+  .nav-links {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    height: 100dvh;
+    background: rgba(18, 18, 18, 0.98);
+    backdrop-filter: blur(15px);
+    flex-direction: column;
+    justify-content: center;
+    transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .nav-links.open {
+    left: 0;
+  }
+  .mobile-menu-btn {
+    display: flex !important;
+    min-width: 44px;
+    min-height: 44px;
+    align-items: center;
+    justify-content: center;
+  }
+  .hide-mobile {
+    display: none !important;
+  }
+  .btn-primary {
+    padding: 10px 16px !important;
+    font-size: 14px !important;
+  }
+}
+@media (max-width: 480px) {
+  .btn-primary {
+    padding: 8px 12px !important;
+    font-size: 12px !important;
+  }
+}
+
+/* Awards Section Styles */
+.award-card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.award-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+}
+
+.award-img:hover {
+  transform: scale(1.03);
+}
+
+@media (max-width: 900px) {
+  .award-card {
+    flex-direction: column !important;
+    padding: 20px !important;
+  }
+  .award-images-container {
+    flex-direction: column !important;
+  }
+  .award-images-container > div {
+    margin-top: 0 !important;
+    width: 100% !important;
+  }
+  /* Fix text container overflowing on small devices */
+  .award-card > div:first-child {
+    flex: 1 1 100% !important;
+    width: 100%;
+  }
+}
+
+/* Designer WhatsApp Icon Hover */
+.designer-wa-icon {
+  transition: all 0.3s ease;
+}
+.designer-wa-icon:hover, .designer-wa-icon:focus-visible {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 6px rgba(37, 211, 102, 0.6));
+  outline: none;
+}
+
+/* Global Responsive Images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Accessibility Focus States */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 2px;
+}
