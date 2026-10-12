@@ -109,11 +109,12 @@ const ScreensSection: React.FC = () => {
           }}>
             <div style={{ 
               maxWidth: '1200px', 
+              width: '100%',
               margin: '0 auto', 
               display: 'flex', 
               flexDirection: index % 2 === 0 ? 'row' : 'row-reverse',
               alignItems: 'center',
-              gap: '60px',
+              gap: 'clamp(30px, 5vw, 60px)',
               flexWrap: 'wrap'
             }}>
               
@@ -123,10 +124,10 @@ const ScreensSection: React.FC = () => {
                 whileInView={{ opacity: 1, scale: 1, filter: 'blur(0px)' }}
                 transition={{ duration: 1, ease: 'easeOut' }}
                 viewport={{ once: true, margin: "-100px" }}
-                style={{ flex: '1 1 500px', position: 'relative', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 20px 50px rgba(0,0,0,0.8)' }}
+                style={{ flex: '1 1 300px', minWidth: 0, maxWidth: '100%', width: '100%', position: 'relative', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 20px 50px rgba(0,0,0,0.8)' }}
               >
                 {screen.label && (
-                  <div style={{ position: 'absolute', top: '20px', left: '20px', background: 'rgba(0,0,0,0.7)', border: `1px solid ${screen.colors.accent}`, color: screen.colors.accent, padding: '8px 16px', fontSize: '12px', letterSpacing: '2px', zIndex: 10, borderRadius: '4px' }}>
+                  <div style={{ position: 'absolute', top: '16px', left: '16px', background: 'rgba(0,0,0,0.75)', border: `1px solid ${screen.colors.accent}`, color: screen.colors.accent, padding: '6px 14px', fontSize: '11px', letterSpacing: '1.5px', zIndex: 10, borderRadius: '4px' }}>
                     {screen.label}
                   </div>
                 )}
@@ -139,15 +140,15 @@ const ScreensSection: React.FC = () => {
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8, delay: 0.2 }}
                 viewport={{ once: true, margin: "-100px" }}
-                style={{ flex: '1 1 400px' }}
+                style={{ flex: '1 1 300px', minWidth: 0, maxWidth: '100%', width: '100%' }}
               >
-                <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '20px' }}>
-                  <span style={{ fontSize: '3rem', fontWeight: 700, color: 'rgba(255,255,255,0.1)' }}>{screen.id}</span>
-                  <h3 style={{ fontSize: '2.5rem', color: '#fff', letterSpacing: '1px' }}>{screen.title}</h3>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '15px', marginBottom: '16px', flexWrap: 'wrap' }}>
+                  <span style={{ fontSize: 'clamp(2rem, 5vw, 3rem)', fontWeight: 700, color: 'rgba(255,255,255,0.1)' }}>{screen.id}</span>
+                  <h3 style={{ fontSize: 'clamp(1.5rem, 4vw, 2.5rem)', color: '#fff', letterSpacing: '1px', wordBreak: 'break-word' }}>{screen.title}</h3>
                 </div>
                 
-                <h4 style={{ color: screen.colors.accent, fontSize: '1.2rem', letterSpacing: '2px', marginBottom: '20px' }}>{screen.tagline}</h4>
-                <p style={{ color: '#ccc', fontSize: '1.1rem', lineHeight: 1.8, marginBottom: '40px' }}>{screen.desc}</p>
+                <h4 style={{ color: screen.colors.accent, fontSize: 'clamp(1rem, 2.5vw, 1.2rem)', letterSpacing: '1.5px', marginBottom: '16px' }}>{screen.tagline}</h4>
+                <p style={{ color: '#ccc', fontSize: 'clamp(0.95rem, 2vw, 1.1rem)', lineHeight: 1.75, marginBottom: '32px' }}>{screen.desc}</p>
                 
                 {screen.soundWave && (
                   <div style={{ display: 'flex', gap: '4px', alignItems: 'center', opacity: 0.5 }}>
@@ -193,28 +194,35 @@ const ScreensSection: React.FC = () => {
         >
           Find your next favourite movie and experience it at SBT Cinemas.
         </motion.p>
-        <motion.button 
+        <motion.a 
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
           className="btn-primary"
-          onClick={() => { window.open('https://in.bookmyshow.com/cinemas/KOVI/sathyabama-sbt-multiplex-dolby-atmos-4k-3d/buytickets/SBTK/20261006?utm_source=chatgpt.com', '_blank'); }}
+          href="https://in.bookmyshow.com/cinemas/kovilpatti/sathyabama-sbt-multiplex-dolby-atmos-4k-3d/SBTK"
+          target="_blank"
+          rel="noopener noreferrer"
           style={{
             background: 'var(--color-gold)',
             color: 'var(--color-black)',
-            padding: '20px 60px',
-            fontSize: '16px',
+            padding: 'clamp(14px, 2.5vw, 20px) clamp(28px, 6vw, 60px)',
+            fontSize: 'clamp(14px, 2vw, 16px)',
             fontWeight: 700,
             borderRadius: '50px',
             letterSpacing: '2px',
             border: 'none',
+            textDecoration: 'none',
+            display: 'inline-flex',
+            alignItems: 'center',
+            justifyContent: 'center',
             cursor: 'pointer',
-            boxShadow: '0 10px 30px rgba(212, 175, 55, 0.3)'
+            boxShadow: '0 10px 30px rgba(212, 175, 55, 0.3)',
+            maxWidth: '100%'
           }}
         >
           EXPLORE MOVIES
-        </motion.button>
+        </motion.a>
       </div>
       
     </section>

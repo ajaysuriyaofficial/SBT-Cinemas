@@ -28,10 +28,10 @@ const experiences = [
 
 const ExperienceSection: React.FC = () => {
   return (
-    <section id="experience" style={{ minHeight: '100vh', position: 'relative', background: '#020202' }}>
+    <section id="experience" style={{ minHeight: '100vh', position: 'relative', overflow: 'hidden', background: '#020202' }}>
       
       {/* Premium Introduction */}
-      <div style={{ textAlign: 'center', marginBottom: '100px' }}>
+      <div style={{ textAlign: 'center', marginBottom: 'clamp(40px, 8vw, 100px)' }}>
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -57,7 +57,7 @@ const ExperienceSection: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
-          style={{ color: 'var(--color-silver)', maxWidth: '800px', margin: '0 auto', fontSize: '1.2rem', lineHeight: 1.6 }}
+          style={{ color: 'var(--color-silver)', maxWidth: '800px', margin: '0 auto', fontSize: 'clamp(1rem, 2vw, 1.2rem)', lineHeight: 1.6 }}
         >
           Discover stunning visuals, immersive three-dimensional worlds, and captivating cinema sound — all designed to bring every story closer to you.
         </motion.p>
@@ -66,8 +66,8 @@ const ExperienceSection: React.FC = () => {
       {/* Experience Cards - Text Focused Layout */}
       <div style={{ 
         display: 'grid', 
-        gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', 
-        gap: '40px',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', 
+        gap: 'clamp(24px, 4vw, 40px)',
         maxWidth: '1200px',
         margin: '0 auto'
       }}>
@@ -81,7 +81,7 @@ const ExperienceSection: React.FC = () => {
             style={{
               background: 'rgba(255,255,255,0.02)',
               borderRadius: '24px',
-              padding: '50px 40px',
+              padding: 'clamp(30px, 5vw, 50px) clamp(20px, 4vw, 40px)',
               border: '1px solid rgba(255,255,255,0.05)',
               position: 'relative',
               overflow: 'hidden',
@@ -155,13 +155,15 @@ const ExperienceSection: React.FC = () => {
           Gather your people, take your seats, and experience the magic of cinema at SBT Cinemas.
         </motion.p>
         
-        <motion.button 
+        <motion.a 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
           className="btn-primary"
-          onClick={() => { window.open('https://in.bookmyshow.com/cinemas/KOVI/sathyabama-sbt-multiplex-dolby-atmos-4k-3d/buytickets/SBTK/20261006?utm_source=chatgpt.com', '_blank'); }}
+          href="https://in.bookmyshow.com/cinemas/kovilpatti/sathyabama-sbt-multiplex-dolby-atmos-4k-3d/SBTK"
+          target="_blank"
+          rel="noopener noreferrer"
           style={{
             background: 'var(--color-gold)',
             color: 'var(--color-black)',
@@ -171,13 +173,17 @@ const ExperienceSection: React.FC = () => {
             borderRadius: '50px',
             letterSpacing: '2px',
             textTransform: 'uppercase',
+            textDecoration: 'none',
+            display: 'inline-flex',
+            alignItems: 'center',
+            justifyContent: 'center',
             boxShadow: '0 10px 30px rgba(212, 175, 55, 0.3)',
             border: 'none',
             cursor: 'pointer'
           }}
         >
           EXPLORE MOVIES
-        </motion.button>
+        </motion.a>
       </div>
     </section>
   );

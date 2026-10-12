@@ -12,6 +12,7 @@ import Footer from './components/Footer';
 import LoadingScreen from './components/LoadingScreen';
 import CelebrityVisit from './components/CelebrityVisit';
 import AwardsSection from './components/AwardsSection';
+import AboutSection from './components/AboutSection';
 import './App.css';
 import backgroundVideo from './assets/video/sbt_cinemas_video_wallpaper4K_HIGH_FR30.mp4';
 
@@ -74,8 +75,9 @@ function App() {
           <Hero />
           <ScreensSection />
           <ExperienceSection />
-          <AwardsSection />
           <CelebrityVisit />
+          <AwardsSection />
+          <AboutSection />
           <ContactSection />
         </main>
         <Footer />

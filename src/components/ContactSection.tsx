@@ -44,7 +44,7 @@ const ContactSection: React.FC = () => {
 
   const cardStyle = {
     background: 'linear-gradient(145deg, #0a0a0a, #111)',
-    padding: '40px 30px',
+    padding: 'clamp(28px, 4vw, 40px) clamp(18px, 3vw, 30px)',
     borderRadius: '20px',
     border: '1px solid rgba(255, 255, 255, 0.05)',
     display: 'flex',
@@ -53,7 +53,10 @@ const ContactSection: React.FC = () => {
     textAlign: 'center' as const,
     boxShadow: '0 10px 30px rgba(0,0,0,0.5)',
     transition: 'all 0.3s ease',
-    flex: '1 1 250px'
+    flex: '1 1 260px',
+    minWidth: 0,
+    maxWidth: '100%',
+    width: '100%'
   };
 
   const inputStyle = {

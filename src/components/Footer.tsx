@@ -17,12 +17,13 @@ const Footer: React.FC = () => {
         <div>
           <h3 style={{ color: 'var(--color-white)', marginBottom: '20px', letterSpacing: '1px', fontSize: '16px' }}>QUICK LINKS</h3>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-            <a href="#home" style={{ color: 'var(--color-silver)', textDecoration: 'none', transition: 'color 0.3s' }}>Home</a>
-            <a href="#theatres" style={{ color: 'var(--color-silver)', textDecoration: 'none', transition: 'color 0.3s' }}>Theatres</a>
-            <a href="#showtimes" style={{ color: 'var(--color-silver)', textDecoration: 'none', transition: 'color 0.3s' }}>Showtimes</a>
-            <a href="#experience" style={{ color: 'var(--color-silver)', textDecoration: 'none', transition: 'color 0.3s' }}>Experience</a>
-            <a href="#about" style={{ color: 'var(--color-silver)', textDecoration: 'none', transition: 'color 0.3s' }}>About</a>
-            <a href="#contact" style={{ color: 'var(--color-silver)', textDecoration: 'none', transition: 'color 0.3s' }}>Contact</a>
+            <a href="#home" style={{ color: 'var(--color-silver)', textDecoration: 'none', transition: 'color 0.3s' }} className="footer-quick-link">Home</a>
+            <a href="#screens" style={{ color: 'var(--color-silver)', textDecoration: 'none', transition: 'color 0.3s' }} className="footer-quick-link">Screens</a>
+            <a href="#experience" style={{ color: 'var(--color-silver)', textDecoration: 'none', transition: 'color 0.3s' }} className="footer-quick-link">Experience</a>
+            <a href="#celebrity-visit" style={{ color: 'var(--color-silver)', textDecoration: 'none', transition: 'color 0.3s' }} className="footer-quick-link">Celebrity Visit</a>
+            <a href="#awards" style={{ color: 'var(--color-silver)', textDecoration: 'none', transition: 'color 0.3s' }} className="footer-quick-link">Awards</a>
+            <a href="#about" style={{ color: 'var(--color-silver)', textDecoration: 'none', transition: 'color 0.3s' }} className="footer-quick-link">About</a>
+            <a href="#contact" style={{ color: 'var(--color-silver)', textDecoration: 'none', transition: 'color 0.3s' }} className="footer-quick-link">Contact</a>
           </div>
         </div>
 
