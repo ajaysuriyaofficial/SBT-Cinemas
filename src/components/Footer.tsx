@@ -33,7 +33,8 @@ const Footer: React.FC = () => {
           <div style={{ display: 'flex', flexDirection: 'column', gap: '15px', color: 'var(--color-silver)' }}>
             <p style={{ lineHeight: '1.6' }}>
               798, Market Rd, Iluppaiyurani,<br />
-              Kovilpatti, Tamil Nadu 628501
+              Kovilpatti - 628501,<br />
+              Tuticorin District, Tamilnadu
             </p>
             <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
               <a href="tel:9994383741" style={{ color: 'var(--color-silver)', textDecoration: 'none' }}>9994383741</a>

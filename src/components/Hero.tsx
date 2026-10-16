@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import logoImg from '../assets/logo/sbtcinemas_logo.png';
 
 const Hero: React.FC = () => {
   return (
@@ -24,54 +25,39 @@ const Hero: React.FC = () => {
         transition={{ duration: 1, delay: 2.5 }}
         style={{ width: '100%', maxWidth: '900px', margin: '0 auto' }}
       >
-        <h1 className="golden-text" style={{
-          fontSize: 'clamp(2rem, 7.5vw, 5.5rem)',
-          lineHeight: '1.15',
-          letterSpacing: 'clamp(0.04em, 1.2vw, 0.15em)',
-          marginBottom: '20px',
-          textTransform: 'uppercase',
-          textWrap: 'balance',
-          textShadow: '0 4px 20px rgba(0,0,0,0.5)',
-          wordBreak: 'break-word'
+        <div style={{
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center'
         }}>
-          SBT CINEMAS
-        </h1>
-        <p style={{
-          fontSize: 'clamp(0.85rem, 3.2vw, 1.35rem)',
-          color: 'var(--color-silver)',
-          marginBottom: '36px',
-          letterSpacing: 'clamp(1px, 0.5vw, 2px)',
-          lineHeight: '1.45',
-          textTransform: 'uppercase',
-          maxWidth: '650px',
-          margin: '0 auto 36px auto'
-        }}>
-          Experience Movies Beyond the Screen
-        </p>
-        <div style={{ display: 'flex', gap: '20px', justifyContent: 'center', flexWrap: 'wrap' }}>
-          <a 
-            href="https://in.bookmyshow.com/cinemas/kovilpatti/sathyabama-sbt-multiplex-dolby-atmos-4k-3d/SBTK"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-primary"
-            style={{
-              background: 'var(--color-gold)',
-              color: 'var(--color-black)',
-              padding: 'clamp(12px, 2.5vw, 15px) clamp(28px, 6vw, 40px)',
-              fontSize: 'clamp(14px, 2vw, 16px)',
-              fontWeight: 600,
-              borderRadius: '4px',
-              letterSpacing: '1px',
-              textDecoration: 'none',
-              display: 'inline-flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              cursor: 'pointer',
-              transition: 'all 0.3s ease'
-            }}
-          >
-            BOOK TICKETS
-          </a>
+          <h1 style={{ margin: 0, padding: 0, display: 'inline-flex', justifyContent: 'center' }}>
+            <span style={{
+              position: 'absolute',
+              width: '1px',
+              height: '1px',
+              padding: 0,
+              margin: '-1px',
+              overflow: 'hidden',
+              clip: 'rect(0, 0, 0, 0)',
+              whiteSpace: 'nowrap',
+              border: 0
+            }}>
+              SBT Cinemas
+            </span>
+            <img
+              src={logoImg}
+              alt="SBT Cinemas"
+              style={{
+                width: 'clamp(170px, 36vw, 290px)',
+                height: 'auto',
+                maxHeight: '32vh',
+                objectFit: 'contain',
+                filter: 'drop-shadow(0 8px 24px rgba(0, 0, 0, 0.75)) drop-shadow(0 0 20px rgba(212, 175, 55, 0.35))',
+                userSelect: 'none',
+                pointerEvents: 'none'
+              }}
+            />
+          </h1>
         </div>
       </motion.div>
     </section>

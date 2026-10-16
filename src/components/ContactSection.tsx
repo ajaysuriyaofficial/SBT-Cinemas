@@ -141,13 +141,12 @@ const ContactSection: React.FC = () => {
           </div>
           <h3 style={{ color: '#fff', marginBottom: '20px', letterSpacing: '2px', fontSize: '1.2rem' }}>VISIT US</h3>
           <p style={{ color: 'var(--color-silver)', lineHeight: '1.8', marginBottom: '30px', flex: 1 }}>
-            798, Market Rd,<br />
-            Iluppaiyurani,<br />
-            Kovilpatti,<br />
-            Tamil Nadu 628501
+            798, Market Rd, Iluppaiyurani,<br />
+            Kovilpatti - 628501,<br />
+            Tuticorin District, Tamilnadu
           </p>
           <a 
-            href="https://www.google.com/maps/search/?api=1&query=798,+Market+Rd,+Iluppaiyurani,+Kovilpatti,+Tamil+Nadu+628501" 
+            href="https://www.google.com/maps/search/?api=1&query=798,+Market+Rd,+Iluppaiyurani,+Kovilpatti+-+628501,+Tuticorin+District,+Tamilnadu" 
             target="_blank" 
             rel="noopener noreferrer"
             style={{ 
@@ -238,10 +237,10 @@ const ContactSection: React.FC = () => {
           Planning your visit? Find our location in Kovilpatti and get directions with ease.
         </p>
         <p style={{ color: '#fff', fontSize: '1.2rem', lineHeight: 1.6, marginBottom: '40px' }}>
-          798, Market Rd, Iluppaiyurani, Kovilpatti, Tamil Nadu 628501
+          798, Market Rd, Iluppaiyurani, Kovilpatti - 628501, Tuticorin District, Tamilnadu
         </p>
         <button 
-          onClick={() => window.open('https://www.google.com/maps/search/?api=1&query=798,+Market+Rd,+Iluppaiyurani,+Kovilpatti,+Tamil+Nadu+628501', '_blank')}
+          onClick={() => window.open('https://www.google.com/maps/search/?api=1&query=798,+Market+Rd,+Iluppaiyurani,+Kovilpatti+-+628501,+Tuticorin+District,+Tamilnadu', '_blank')}
           style={{
             background: 'var(--color-gold)',
             color: '#000',

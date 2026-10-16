@@ -1,15 +1,15 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Search, Menu, X, User } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import logoImg from '../assets/logo/sbtcinemas_logo.png';
 
-export interface NavItem {
+interface NavItem {
   id: string;
   label: string;
   href: string;
 }
 
-export const NAV_ITEMS: NavItem[] = [
+const NAV_ITEMS: NavItem[] = [
   { id: 'home', label: 'Home', href: '#home' },
   { id: 'screens', label: 'Screens', href: '#screens' },
   { id: 'experience', label: 'Experience', href: '#experience' },
@@ -181,21 +181,6 @@ const Navbar: React.FC = () => {
 
           {/* Right Action Buttons */}
           <div className="navbar-actions">
-            <button
-              type="button"
-              className="icon-btn hide-on-tablet"
-              aria-label="Search movies"
-            >
-              <Search color="#fff" size={18} />
-            </button>
-            <button
-              type="button"
-              className="icon-btn hide-on-tablet"
-              aria-label="User Account"
-            >
-              <User color="#fff" size={18} />
-            </button>
-
             <a
               href={BOOK_TICKETS_URL}
               target="_blank"
@@ -306,7 +291,7 @@ const Navbar: React.FC = () => {
                 </a>
                 <div className="mobile-drawer-info">
                   <p className="mobile-drawer-tagline">Experience Movies Beyond the Screen</p>
-                  <p className="mobile-drawer-location">Kovilpatti, Tamil Nadu</p>
+                  <p className="mobile-drawer-location">Kovilpatti - 628501, Tuticorin District, Tamilnadu</p>
                 </div>
               </div>
             </motion.aside>
